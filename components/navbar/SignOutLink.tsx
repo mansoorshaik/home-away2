@@ -1,4 +1,15 @@
+'use client'
+import { SignOutButton } from "@clerk/nextjs"; 
+import { useToast } from '../ui/use-toast';
 function SignOutLink() {
-    return <h1 className='text-3xl'>BookingsPage</h1>;
+  const { toast } = useToast();
+  const handleLogout  = ()=>{
+    toast({ description: 'You have been signed out.' });
   }
-  export default SignOutLink;
+    return < >
+   <SignOutButton>
+    <button className='w-full text-left' onClick={handleLogout}>Logout</button>
+   </SignOutButton>
+    </>;
+  }
+  export default SignOutLink; 
